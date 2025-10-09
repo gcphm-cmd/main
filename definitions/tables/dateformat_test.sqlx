@@ -1,0 +1,11 @@
+config {
+  type: "table"
+}
+
+SELECT
+  CURRENT_TIMESTAMP() AS current_timestamp_value,
+  FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', CURRENT_TIMESTAMP()) AS formatted_current_timestamp,
+  CURRENT_DATE() AS current_date_value,
+  FORMAT_DATE('%Y-%m-%d', CURRENT_DATE()) AS formatted_current_date,
+  CURRENT_DATETIME() AS current_datetime_value,
+  FORMAT_DATETIME('%Y-%m-%d %H:%M:%S', CURRENT_DATETIME()) AS formatted_current_datetime
