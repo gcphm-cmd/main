@@ -3,6 +3,6 @@ config { type: "assertion" }
 SELECT
   *
 FROM
-  ${ref("fest_test")}
+  ${ref("manifest_test")}
 WHERE
   file_no IS NULL
