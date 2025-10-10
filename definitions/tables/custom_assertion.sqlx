@@ -1,0 +1,8 @@
+config { type: "assertion" }
+
+SELECT
+  *
+FROM
+  ${ref("fest_test")}
+WHERE
+  file_no IS NULL
