@@ -2,8 +2,11 @@ config {
   type: "table"
 }
 
-
+-- Only select data if assertion passes (no null file_no)
 SELECT
   *
 FROM
-  `prj-lii-datalake-devtest.transform_evolve.daily_evolve_manifest` limit 30
+  ${ref("staging_manifest_test")}
+WHERE NOT EXISTS (
+  SELECT 1 FROM ${ref("staging_manifest_test")} WHERE file_no IS NULL
+)

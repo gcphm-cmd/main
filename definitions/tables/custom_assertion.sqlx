@@ -1,8 +1,0 @@
-config { type: "assertion" }
-
-SELECT
-  *
-FROM
-  ${ref("manifest_test")}
-WHERE
-  file_no IS NULL

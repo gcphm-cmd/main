@@ -1,0 +1,9 @@
+config {
+  type: "table"
+  }
+
+select 1 as id, 101 as batch
+union all
+select 2, 102
+union all
+select 3, null
