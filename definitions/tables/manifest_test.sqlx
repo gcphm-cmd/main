@@ -8,5 +8,5 @@ SELECT
 FROM
   ${ref("staging_manifest_test")}
 WHERE NOT EXISTS (
-  SELECT 1 FROM ${ref("staging_manifest_test")} WHERE file_no IS NULL
+  SELECT 1 FROM ${ref("staging_manifest_test")} WHERE batch IS NULL
 )
