@@ -1,0 +1,8 @@
+config {
+  type: "view"
+}
+
+
+SELECT * 
+FROM
+  `prj-lii-datalake-devtest.master_smartborder.customer`

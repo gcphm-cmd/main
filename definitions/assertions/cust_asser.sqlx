@@ -1,0 +1,7 @@
+config {
+  type: "assertion",
+  description: "No null file_no in staging_manifest_test"
+}
+
+SELECT * FROM ${ref("stg_cust")}
+WHERE salesman_cd IS NULL
