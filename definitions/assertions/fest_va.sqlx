@@ -4,4 +4,4 @@ config {
 }
 
 SELECT * FROM ${ref("staging_manifest_test")}
-WHERE batch IS NULL
+WHERE salesman_cd IS NULL
