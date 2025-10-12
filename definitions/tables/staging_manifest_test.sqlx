@@ -2,6 +2,8 @@ config {
   type: "table"
   }
 
-SELECT * 
-FROM
-  `prj-lii-datalake-devtest.master_smartborder.customer`
+select 1 as id, 11111 as batch
+union all
+select 2 as id, 22222 as batch
+union all
+select 3 as id, null

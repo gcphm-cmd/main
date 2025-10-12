@@ -3,6 +3,4 @@ config {
 }
 
 
-SELECT * 
-FROM
-  `prj-lii-datalake-devtest.master_smartborder.customer`
+SELECT * FROM ${ref("stg_cust")}

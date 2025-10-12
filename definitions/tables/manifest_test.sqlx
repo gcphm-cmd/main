@@ -7,6 +7,6 @@ SELECT
   *
 FROM
   ${ref("staging_manifest_test")}
-WHERE NOT EXISTS (
-  SELECT 1 FROM ${ref("staging_manifest_test")} WHERE salesman_cd IS NULL
-)
+--WHERE NOT EXISTS (
+--  SELECT 1 FROM ${ref("staging_manifest_test")} WHERE salesman_cd IS NULL
+--)
