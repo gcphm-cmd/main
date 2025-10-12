@@ -1,8 +1,0 @@
-config {
-  type: "table",
-  tags: ["staging"]
-  }
-
-SELECT * 
-FROM
-  `prj-lii-datalake-devtest.master_smartborder.customer`
