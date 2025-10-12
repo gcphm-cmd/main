@@ -1,0 +1,6 @@
+config {
+    type: "assertion"
+}
+
+select * from ${ref("stg_cust")} 
+where salesman_cd is null
