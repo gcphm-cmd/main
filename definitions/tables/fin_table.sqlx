@@ -5,6 +5,3 @@ config {
 
 select *
 from ${ref("stg_tab")}
-where not exists (
-  select 1 from ${ref("stg_tab")} where batch is null
-)
