@@ -1,6 +1,6 @@
 config {
   type: "table",
-  dependencies: ["not_null_asser"]
+  dependOnDependencyAssertions: true
 }
 
 select *
