@@ -31,5 +31,3 @@ ON
   entrylines.prof_prod_id = products.prof_prod_id
 ORDER BY
   entryheader.entry_dt DESC
-LIMIT
-  100
