@@ -5,4 +5,4 @@ config {
 select id, batch
 from ${ref("stg_tab")}
 group by id, batch
-having count(*) > 1
+having count(1) > 1
