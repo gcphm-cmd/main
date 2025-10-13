@@ -1,0 +1,6 @@
+config {
+    type: "assertion"
+}
+
+select * from ${ref("stg_tab")} 
+where batch is null

@@ -1,0 +1,8 @@
+config {
+  type: "assertion"
+}
+
+select id, batch
+from ${ref("stg_tab")}
+group by id, batch
+having count(1) > 1
