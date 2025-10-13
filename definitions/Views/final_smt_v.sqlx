@@ -1,0 +1,7 @@
+config {
+  type: "view",
+  dependOnDependencyAssertions: true
+}
+
+select *
+from ${ref("stg_smt")}
