@@ -1,0 +1,36 @@
+config {
+  type: "table"
+  }
+
+SELECT
+  a.sbtrans_id,
+  a.sbtrans_type,
+  a.sb_num,
+  a.entry_no,
+  a.client_id,
+  a.sbtrans_dt,
+  a.created_ts AS sbtrans_created_ts,
+  b.key_name,
+  b.key_value_ts AS tracing_key_value_ts,
+  c.ent_post_entry_id,
+  c.type AS post_entry_type,
+  c.followupdate AS post_entry_followup_date,
+  d.ent_lin_id,
+  d.description,
+  d.inv_amt
+FROM
+  `prj-lii-datalake-devtest`.`master_smartborder`.`sbtrans` AS a
+INNER JOIN
+  `prj-lii-datalake-devtest`.`master_smartborder`.`tracingdates` AS b
+ON
+  a.sbtrans_id = b.sbtrans_id
+INNER JOIN
+  `prj-lii-datalake-devtest`.`master_smartborder`.`entrypostentry` AS c
+ON
+  a.sbtrans_id = c.sbtrans_id
+INNER JOIN
+  `prj-lii-datalake-devtest`.`master_smartborder`.`entrylines` AS d
+ON
+  a.sbtrans_id = d.sbtrans_id
+ORDER BY
+  a.sbtrans_dt

@@ -1,0 +1,35 @@
+config {
+  type: "table",
+  dependencies: ["test_tab"]
+  }
+
+
+SELECT
+  DISTINCT entryheader.ent_id,
+  entryheader.client_name,
+  entryheader.imp_name,
+  entryheader.entry_no,
+  entryheader.entry_dt,
+  entrylines.description AS line_item_description,
+  entrylines.inv_amt AS line_item_invoice_amount,
+  entrytarnums.tar_no AS tariff_number,
+  products.prod_cd AS product_code,
+  products.product_desc AS product_description
+FROM
+  `prj-lii-datalake-devtest`.`master_smartborder`.`entryheader` AS entryheader
+INNER JOIN
+  `prj-lii-datalake-devtest`.`master_smartborder`.`entrylines` AS entrylines
+ON
+  entryheader.ent_id = entrylines.ent_id
+INNER JOIN
+  `prj-lii-datalake-devtest`.`master_smartborder`.`entrytarnums` AS entrytarnums
+ON
+  entrylines.ent_lin_id = entrytarnums.ent_lin_id
+LEFT JOIN
+  `prj-lii-datalake-devtest`.`master_smartborder`.`products` AS products
+ON
+  entrylines.prof_prod_id = products.prof_prod_id
+ORDER BY
+  entryheader.entry_dt DESC
+LIMIT
+  100

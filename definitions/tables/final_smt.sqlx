@@ -1,0 +1,7 @@
+config {
+  type: "table",
+  dependOnDependencyAssertions: true
+}
+
+select *
+from ${ref("stg_smt")}
