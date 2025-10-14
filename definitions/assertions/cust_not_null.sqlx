@@ -1,5 +1,6 @@
 config {
-    type: "assertion"
+    type: "assertion",
+    tags: ["cust_asser"]
 }
 
 select * from ${ref("stg_cust")} 

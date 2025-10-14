@@ -7,5 +7,5 @@ select 1 as id, 11111 as batch
 union all
 select 2 as id, 22222 as batch
 union all
-select 1 as id, 11111 as batch
+select 1 as id, 22222 as batch
 
