@@ -5,3 +5,4 @@ config {
 
 select *
 from ${ref("stg_cust")}
+
