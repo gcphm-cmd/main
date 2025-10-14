@@ -1,0 +1,25 @@
+config {
+  type: "view"
+}
+
+
+
+SELECT
+  entryheader.entry_dt AS header_entry_date,
+  entryheader.client_name,
+  entrylines.description AS line_item_description_smartborder,
+  entryheader.imp_name,
+  entrylines.inv_amt,
+  entrytarnums.tar_no
+FROM
+  `prj-lii-datalake-devtest`.`master_smartborder`.`entryheader` AS entryheader
+LEFT JOIN
+  `prj-lii-datalake-devtest`.`master_smartborder`.`entrylines` AS entrylines
+ON
+  entryheader.ent_id = entrylines.ent_id
+LEFT JOIN
+  `prj-lii-datalake-devtest`.`master_smartborder`.`entrytarnums` AS entrytarnums
+ON
+  entrylines.ent_lin_id = entrytarnums.ent_lin_id
+ORDER BY
+  entryheader.entry_dt
