@@ -33,5 +33,3 @@ LEFT JOIN
   `prj-lii-datalake-devtest`.`master_smartborder`.`entrylines` AS d
 ON
   a.sbtrans_id = d.sbtrans_id
-ORDER BY
-  a.sbtrans_created_ts
