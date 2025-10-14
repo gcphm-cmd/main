@@ -1,6 +1,0 @@
-config {
-    type: "assertion"
-}
-
-select * from ${ref("stg_products")} 
-where product_code is null

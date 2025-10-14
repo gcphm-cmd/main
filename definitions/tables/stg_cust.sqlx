@@ -1,7 +1,0 @@
-config {
-  type: "table",
-  tags: ["stg", "cust"]
-  }
-
-
-SELECT * FROM `prj-lii-datalake-devtest.master_smartborder.customer`

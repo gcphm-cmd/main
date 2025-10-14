@@ -1,8 +1,0 @@
-config {
-  type: "table",
-  dependOnDependencyAssertions: true,
-  tags: ["final"]
-}
-
-select *
-from ${ref("stg_tab")}

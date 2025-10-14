@@ -1,7 +1,0 @@
-config {
-    type: "assertion",
-    tags: ["cust_asser"]
-}
-
-select * from ${ref("stg_cust")} 
-where salesman_cd is null

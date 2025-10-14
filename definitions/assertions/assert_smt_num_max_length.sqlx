@@ -1,6 +1,0 @@
-config {
-  type: "assertion"
-}
-
-SELECT * FROM ${ref("stg_smt")}
-WHERE LENGTH(CAST(sb_num AS STRING)) > 9
