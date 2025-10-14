@@ -1,0 +1,9 @@
+config {
+  type: "assertion",
+  tags: ["dups"]
+}
+
+select id, batch
+from ${ref("stg_tab")}
+group by id, batch
+having count(1) > 1
