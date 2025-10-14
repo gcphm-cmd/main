@@ -2,4 +2,51 @@ config {
   type: "table"
   }
 
-select "H1" as name, 1111 as id
+SELECT
+  sbtrans.sbtrans_id,
+  sbtrans.entry_no,
+  sbtrans.sbtrans_type,
+  sbtrans.sb_num,
+  sbtrans.filer_cd,
+  sbtrans.client_id,
+  sbtrans.port_entry_cd,
+  sbtrans.sbtrans_dt,
+  sbtrans.est_arrvl_dt,
+  sbtrans.release_dt,
+  sbtrans.entry_dt,
+  sbtrans.bill_no,
+  sbtrans.bill_ts,
+  sbtrans.created_ts,
+  sbtrans.modified_ts,
+  entrylines.ent_lin_id,
+  entrylines.inv_amt,
+  entrylines.value,
+  entrylines.grosswt,
+  entrylines.description,
+  products.prof_prod_id,
+  products.prod_cd,
+  products.product_desc,
+  entrytarnums.ent_lin_tar_num_id,
+  entrytarnums.tar_no,
+  entrytarnums.tariff_desc,
+  entrytarnums.tariff_duty_amt,
+  entrytarnums.qty_1,
+  entrytarnums.uom_1,
+  entrytarnums.invoice_amt AS entrytarnums_invoice_amt,
+  entrytarnums.value AS entrytarnums_value
+FROM
+  `prj-lii-datalake-devtest`.`master_smartborder`.`sbtrans` AS sbtrans
+INNER JOIN
+  `prj-lii-datalake-devtest`.`master_smartborder`.`entrylines` AS entrylines
+ON
+  sbtrans.sbtrans_id = entrylines.sbtrans_id
+INNER JOIN
+  `prj-lii-datalake-devtest`.`master_smartborder`.`products` AS products
+ON
+  entrylines.prof_prod_id = products.prof_prod_id
+INNER JOIN
+  `prj-lii-datalake-devtest`.`master_smartborder`.`entrytarnums` AS entrytarnums
+ON
+  entrylines.ent_lin_id = entrytarnums.ent_lin_id
+ORDER BY
+  sbtrans.sbtrans_dt
